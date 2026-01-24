@@ -1,0 +1,221 @@
+/**
+ * ProviderCard Styles
+ */
+
+.provider-card {
+    position: relative;
+    border-radius: var(--radius-xl);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-spring);
+    aspect-ratio: 1;
+}
+
+.provider-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-xl);
+    padding: 2px;
+    background: linear-gradient(
+        135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.05) 50%,
+        transparent 100%
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.provider-card:hover::before {
+    background: linear-gradient(
+        135deg, 
+        var(--provider-color, var(--accent-purple)) 0%, 
+        var(--accent-blue) 100%
+    );
+}
+
+.provider-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.provider-card.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.provider-card.disabled:hover {
+    transform: none;
+}
+
+.provider-card.disabled:hover::before {
+    background: linear-gradient(
+        135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.05) 50%,
+        transparent 100%
+    );
+}
+
+/* Glow Effect */
+.card-glow {
+    position: absolute;
+    inset: -2px;
+    border-radius: var(--radius-xl);
+    background: var(--provider-color, var(--accent-purple));
+    opacity: 0;
+    filter: blur(20px);
+    transition: opacity var(--duration-normal) var(--ease-out);
+    z-index: -1;
+}
+
+.provider-card:hover .card-glow {
+    opacity: 0.3;
+}
+
+/* Card Inner */
+.card-inner {
+    position: relative;
+    height: 100%;
+    padding: var(--space-6);
+    background: var(--glass-bg);
+    border-radius: var(--radius-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-4);
+    overflow: hidden;
+}
+
+/* Badge */
+.card-badge {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+}
+
+.live-dot {
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+}
+
+/* Icon */
+.provider-icon-wrapper {
+    position: relative;
+}
+
+.provider-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    border-radius: var(--radius-xl);
+    transition: transform var(--duration-normal) var(--ease-spring);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.provider-card:hover .provider-icon {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+/* Info */
+.provider-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.provider-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.provider-model {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.provider-tagline {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Capabilities */
+.provider-capabilities {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+.capability-tag {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: all var(--duration-fast);
+}
+
+.provider-card:hover .capability-tag {
+    background: rgba(168, 85, 247, 0.1);
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+/* CTA */
+.card-cta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: auto;
+    padding-top: var(--space-4);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: all var(--duration-fast);
+}
+
+.cta-arrow {
+    transition: transform var(--duration-fast);
+}
+
+.provider-card:hover .card-cta {
+    color: var(--accent-purple);
+}
+
+.provider-card:hover .cta-arrow {
+    transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .provider-card {
+        aspect-ratio: auto;
+        min-height: 280px;
+    }
+    
+    .provider-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 2rem;
+    }
+    
+    .provider-name {
+        font-size: 1.25rem;
+    }
+}

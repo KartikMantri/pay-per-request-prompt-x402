@@ -1,0 +1,230 @@
+/**
+ * AdminPanel Styles
+ */
+
+.admin-panel {
+    min-height: calc(100vh - 80px);
+    padding: var(--space-8) var(--space-6);
+}
+
+.admin-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Header */
+.admin-header {
+    text-align: center;
+    margin-bottom: var(--space-10);
+}
+
+.header-badge {
+    margin-bottom: var(--space-4);
+}
+
+.admin-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-2);
+}
+
+.admin-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Stats */
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-1);
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.stat-link {
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    color: var(--accent-purple);
+}
+
+/* Cards */
+.admin-card {
+    padding: var(--space-8);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+}
+
+.admin-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-2);
+}
+
+.admin-card > p {
+    color: var(--text-muted);
+    margin-bottom: var(--space-6);
+}
+
+/* Not Connected / Not Owner */
+.not-connected,
+.not-owner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-8);
+}
+
+.not-connected .icon,
+.not-owner .icon {
+    font-size: 4rem;
+    margin-bottom: var(--space-4);
+    opacity: 0.5;
+}
+
+.not-connected h3,
+.not-owner h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-2);
+}
+
+.not-connected p,
+.not-owner p {
+    color: var(--text-muted);
+}
+
+.wallet-info {
+    margin-top: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+}
+
+.wallet-info .label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-right: var(--space-2);
+}
+
+.wallet-info code {
+    font-size: 0.85rem;
+}
+
+/* Withdraw */
+.withdraw-card {
+    text-align: center;
+}
+
+.withdraw-info {
+    padding: var(--space-4);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-6);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-2) 0;
+}
+
+.info-row:not(:last-child) {
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.info-label {
+    color: var(--text-muted);
+}
+
+.info-value {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.confirm-section {
+    padding: var(--space-4);
+    background: var(--warning-bg);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: var(--radius-lg);
+}
+
+.confirm-warning {
+    color: var(--warning);
+    margin-bottom: var(--space-4);
+}
+
+.confirm-buttons {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+}
+
+/* Alerts */
+.success-alert,
+.error-alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-4);
+}
+
+.success-alert {
+    background: var(--success-bg);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: var(--success);
+}
+
+.success-alert a {
+    color: var(--success);
+    text-decoration: underline;
+}
+
+.error-alert {
+    background: var(--error-bg);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: var(--error);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .confirm-buttons {
+        flex-direction: column;
+    }
+}

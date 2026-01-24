@@ -1,0 +1,303 @@
+/**
+ * Header Styles
+ */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(5, 5, 7, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+                          BRAND
+   ═══════════════════════════════════════════════════════════════ */
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    cursor: pointer;
+    transition: opacity var(--duration-fast);
+}
+
+.header-brand:hover {
+    opacity: 0.9;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.03em;
+}
+
+.brand-tagline {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding-left: var(--space-3);
+    border-left: 1px solid var(--border-light);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+                          CENTER NAV
+   ═══════════════════════════════════════════════════════════════ */
+
+.header-center {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: var(--radius-md);
+    transition: all var(--duration-fast);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link.active {
+    color: var(--accent-purple);
+    background: rgba(168, 85, 247, 0.1);
+}
+
+.nav-icon {
+    font-size: 1rem;
+}
+
+/* Current Provider Indicator */
+.current-provider {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.back-btn {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--duration-fast);
+}
+
+.back-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--accent-purple);
+}
+
+.provider-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+}
+
+.provider-icon {
+    font-size: 1.25rem;
+}
+
+.provider-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+                          RIGHT SECTION
+   ═══════════════════════════════════════════════════════════════ */
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.access-status {
+    display: flex;
+    align-items: center;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+}
+
+.status-badge.loading {
+    color: var(--text-muted);
+}
+
+.status-badge.loading .status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    animation: pulse-dot 1.5s infinite;
+}
+
+.status-badge.premium {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.status-badge.credits {
+    background: rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.status-badge.payg {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.status-icon {
+    font-size: 1rem;
+}
+
+.status-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.status-label {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.status-detail {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+                       PROTOCOL BANNER
+   ═══════════════════════════════════════════════════════════════ */
+
+.protocol-banner {
+    background: linear-gradient(90deg, 
+        rgba(168, 85, 247, 0.08) 0%, 
+        rgba(99, 102, 241, 0.08) 50%, 
+        rgba(59, 130, 246, 0.08) 100%);
+    border-top: 1px solid var(--border-subtle);
+    padding: var(--space-2) 0;
+}
+
+.banner-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.banner-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.banner-icon {
+    font-size: 0.9rem;
+}
+
+.banner-divider {
+    width: 4px;
+    height: 4px;
+    background: var(--text-dim);
+    border-radius: 50%;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+                       RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 var(--space-4);
+    }
+    
+    .brand-tagline {
+        display: none;
+    }
+    
+    .header-nav {
+        display: none;
+    }
+    
+    .status-info {
+        display: none;
+    }
+    
+    .status-badge {
+        padding: var(--space-2) var(--space-3);
+    }
+    
+    .banner-content {
+        flex-wrap: wrap;
+        gap: var(--space-3);
+    }
+    
+    .banner-divider {
+        display: none;
+    }
+}

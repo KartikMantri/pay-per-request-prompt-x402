@@ -1,0 +1,80 @@
+/**
+ * App-level styles
+ */
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding-top: 80px; /* Header height */
+}
+
+/* ═══════════════════════════════════════════════════════════════
+                          FOOTER
+   ═══════════════════════════════════════════════════════════════ */
+
+.footer {
+    padding: var(--space-6) 0;
+    border-top: 1px solid var(--border-subtle);
+    background: var(--bg-secondary);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.footer-icon {
+    font-size: 1.25rem;
+}
+
+.footer-divider {
+    color: var(--text-dim);
+}
+
+.footer-tagline {
+    color: var(--text-secondary);
+}
+
+.footer-powered {
+    color: var(--text-muted);
+}
+
+.monad-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .footer-content {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+    
+    .footer-divider {
+        display: none;
+    }
+}
