@@ -1,0 +1,8 @@
+{
+  "name": "x402-ai-gateway-root",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
