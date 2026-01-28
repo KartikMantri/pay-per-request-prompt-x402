@@ -21,7 +21,7 @@ export const CONTRACT_ADDRESS = '0x5ED6Aa792Ed7Cd9d364711145D6D0CEb361dcFd4';
 export const OWNER_ADDRESS = '0x0c9e972edcae045f043aa8d5edaa42a0311f5bb9';
 
 // API Configuration
-export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+export const API_URL = import.meta.env.VITE_API_URL || 'https://x402-ai-backend.onrender.com';
 
 // ═══════════════════════════════════════════════════════════════
 //                     PRICING CONFIGURATION

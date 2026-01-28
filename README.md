@@ -70,7 +70,12 @@ cd ../frontend
 npm install
 ```
 
-### 3. Production Configuration
+### 3. Deployment Guides
+
+- [Deploying to Vercel (Front & Back)](./DEPLOYMENT_VERCEL.md)
+- [Deploying Backend to Render](./DEPLOYMENT_RENDER.md)
+
+### 4. Production Configuration
 
 Update `backend/.env` with your credentials:
 
